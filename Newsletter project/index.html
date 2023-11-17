@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Newsletter</title>
+  <style>
+    /* CSS styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7; /* Calm background color change it later if not good */
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.content {
+  padding: 20px;
+  text-align: center; /* Center align the content */
+  border-radius: 50px;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Additional styles for the form */
+form {
+  margin-top: 20px;
+}
+
+input[type="email"] {
+  padding: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Lively elements */
+h2 {
+  color: #007bff; /* Lively color for headings */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  background-color: #fff;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 50px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+ul li:hover {
+  transform: scale(1.05);
+}
+
+img {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+  </style>
+</head>
+<body>
+  <!--header section-->
+  <div class="header">
+    <h1>Welcome to our Newsletter!</h1>
+  </div>
+  <!--COntent Section-->
+  <div class="content">
+    <h2>Latest Updates</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl ac ultrices aliquet, nunc nunc tincidunt nunc, id lacinia nunc nisl id nunc.</p>
+    
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    
+    <img src="image.jpg" alt="Newsletter Image" width="300" height="200">
+    
+    <p>For more information, visit our website <a target="_blank" href="https://www.example.com">here</a>.</p>
+    
+    <!-- Subscription form -->
+    <form id="newsletterForm">
+      <input type="email" id="emailInput" placeholder="Enter your email" required>
+      <button type="submit" id="subscribeBtn">Subscribe</button>
+    </form>
+    <div id="message"></div>
+  </div>
+  
+  <div class="footer">
+    <p>Follow us on social media:</p>
+    <a href="https://www.facebook.com">Facebook</a> |
+    <a href="https://www.twitter.com">Twitter</a> |
+    <a href="https://www.instagram.com">Instagram</a>
+  </div>
+
+  <script>
+    // JS for handling form submission
+    document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var email = document.getElementById('emailInput').value;
+      if (validateEmail(email)) {
+        document.getElementById('message').innerText = 'Thank you for subscribing!';
+        document.getElementById('emailInput').value = '';
+      } else {
+        document.getElementById('message').innerText = 'Please enter a valid email address';
+      }
+    });
+
+    function validateEmail(email) {
+      var re = /\S+@\S+\.\S+/;
+      return re.test(email);
+    }
+  </script>
+</body>
+</html>
